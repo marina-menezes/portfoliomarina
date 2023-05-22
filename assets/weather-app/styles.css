@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    display: grid;
+    place-items: center;
+    background-image: url(assets/img/Background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+.height {
+    height: 20vh;
+}
+
+.fa {
+    display: inline-block;
+}
+
+.card {
+    color: #6f707d;
+    font-family: 'Roboto', sans-serif;
+}
+
+.search input {
+    height: 45px;
+}
+
+.search button {
+    width: 110px;
+}
+
+#temperature {
+    font-size: 75px;
+}

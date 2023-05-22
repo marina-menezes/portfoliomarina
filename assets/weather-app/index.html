@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Weather App</title>
+</head>
+<body>
+
+    <!-- SEARCH BAR -->
+    <div class="container">
+        <div class="row height d-flex justify-content-center align-items-center">
+            <div class="col-md-8">
+                <div class="search">
+                    <form class="d-flex" role="search">
+                        <input id="search" class="form-control me-2" type="text" placeholder="Enter City">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CONTAINER WITH INFO -->
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-4 col-sm-12 col-xs-12 mb-5">
+                <div class="card p-4 mb-5">
+                    <div class="d-flex">
+                        <h2 class="flex-grow-1" id="city">Rio de Janeiro</h2>
+                        <h6 id="time" class="p-2"></h6>
+                    </div>
+                    <div class="d-flex flex-column temp mt-5 mb-3 justify-content-center align-items-center">
+                        <h1 class="mb-0 font-weight-bold" id="temperature">26°C</h1>
+                        <span class="small grey" id="sky">Sunny</span>
+                    </div>
+                    <div class="d-flex">
+                        <div class="temp-details flex-grow-1">
+                            <p class="my-1">
+                                <i class="fa fa-tint mr-2" aria-hidden="true"></i>
+                                <span id="hum">86%</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+	<script>
+		const form = document.querySelector('form');
+		const cityDiv = document.querySelector('#city');
+		const tempDiv = document.querySelector('#temperature');
+        const time = document.querySelector('#time');
+        const hum = document.querySelector('#hum');
+
+        //Date
+        let today = new Date()
+        time.innerHTML = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const search = document.querySelector('#search').value;
+			const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=b57e23c607d49c8a17660e6af382bc96&units=metric`;
+
+			fetch(url)
+				.then(response => response.json())
+				.then(data => {
+					cityDiv.textContent = data.name;
+					tempDiv.textContent = `${data.main.temp}°C`;
+                    sky.innerHTML = data.weather[0].main 
+                    hum.innerHTML = data.main.humidity + "%"
+				})
+
+                
+        .catch(err => alert("Error: Please insert correct city name")) //Catch error
+
+
+        });
+	</script>    
+</body>
+</html>
