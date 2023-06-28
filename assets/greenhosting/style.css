@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body{
+    font-family: Poppins, sans-serif;
+}
+
+header{
+    height: 100px;
+    color: rgb(199, 199, 199);
+
+}
+
+@media (max-width: 768px){
+    header {
+        margin-bottom: 20px; 
+        height: 200px;
+
+        }
+}
+
+h1 {
+    color: black;
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+@media (max-width: 768px){
+    h1 {
+        font-size: 36px;
+    }
+}
+
+header p {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    font-size: 15px;
+    color: rgb(172, 172, 172);
+}
+
+section {
+    margin: 0 auto;
+    display: block;
+    max-width: 960px;
+    width: 100%;
+}
+
+.card {
+    display: inline-block;
+    margin: 10px;
+    border-radius: 5px;
+    vertical-align: top;
+    max-height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 30px;
+    
+}
+
+@media (max-width: 768px){
+    .card {
+        display: block;
+        margin: 20px 10px 20px 10px;
+
+    }
+}
+
+.card img{
+    display: block;
+    width: 300px;
+    height: 300px;
+}
+
+@media (max-width: 768px){
+    .card img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.card details{
+    width: 300px;
+    height: auto;
+    display: inline-block;
+
+}
+
+@media (max-width: 768px){
+    .card details {
+        width: 100%;
+    }
+}
+
+.card details summary{
+    display: flex;
+    font-size: 15px;
+    padding: 20px;
+    font-weight: 400;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px rgb(210, 210, 210);
+    margin: 30px 30px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+}
+
+@media (max-width: 768px){
+    .card details summary{
+        font-size: 16px;
+    }
+
+}
+
+.card details summary:hover {
+    background-color: rgb(210, 210, 210);
+    color: rgb(251, 251, 251);
+}
+
+.card details p{
+    padding: 0 10px;
+    color: rgb(85, 85, 85);
+}
+
+.card p{
+    font-size: 15px;
+}
+
+@media (max-width: 768px){
+    .card details p{
+        font-size: 14px;
+    }
+
+}
+
+.card details blockquote {
+    position: flex;
+    font-size: 15px;
+    color: #777;
+    align-items: left;
+
+}
